@@ -1,7 +1,5 @@
-require('dotenv').config();
-
 export var firebaseConfig = {
-    apiKey: process.env.apiKey,
+    apiKey: "%apiKey%",
     authDomain: "socialapp-61e2c.firebaseapp.com",
     projectId: "socialapp-61e2c",
     storageBucket: "socialapp-61e2c.appspot.com",
