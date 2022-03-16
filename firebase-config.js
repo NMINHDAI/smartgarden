@@ -1,5 +1,5 @@
 export var firebaseConfig = {
-    apiKey: "AIzaSyC9h-CdV_pHRlya6NZhcbRmFVSg9qDVHCA",
+    apiKey: process.env.apiKey,
     authDomain: "socialapp-61e2c.firebaseapp.com",
     projectId: "socialapp-61e2c",
     storageBucket: "socialapp-61e2c.appspot.com",
