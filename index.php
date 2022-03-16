@@ -1,1 +1,2 @@
-<?php include_once("index.html"); 
+<!-- $apiKey = getenv('MY_VAR');
+<?php include_once("index.html");  -->
