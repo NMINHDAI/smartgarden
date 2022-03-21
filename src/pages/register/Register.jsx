@@ -20,8 +20,11 @@ export default function Register() {
         email: email.current.value,
         password: password.current.value,
       };
+      const headers = {
+        'Content-Type': 'application/json'
+      }
       try {
-        await axios.post("/auth/register", user);
+        await axios.post("https://cors-proxy420.herokuapp.com/https://danganhapi.herokuapp.com/api/auth/register", user);
         history.push("/login");
       } catch (err) {
         console.log(err);
