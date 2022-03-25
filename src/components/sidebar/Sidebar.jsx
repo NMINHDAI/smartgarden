@@ -1,5 +1,8 @@
 import "./sidebar.css";
 import { Link } from "react-router-dom";
+import { logout } from "../../apiCalls";
+import { useContext, useRef } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import {
   RssFeed,
   Chat,
@@ -15,11 +18,24 @@ import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function Sidebar() {
+  const { isFetching, dispatch } = useContext(AuthContext);
+
+  const logoutFunc = async (e) => {
+    e.preventDefault();
+    await logout(dispatch);
+    window.location.href='/';
+  }
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
         <ul className="sidebarList">
         <Link to={'/messenger'}>chat nowwwwww</Link>
+        <form>
+          <button className="loginButton" onClick={logoutFunc} type="submit" disabled={isFetching}>
+              Logout
+            </button>
+            
+          </form>
           <li className="sidebarListItem">
             <RssFeed className="sidebarIcon" />
             <span className="sidebarListItemText">Feed</span>

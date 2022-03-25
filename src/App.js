@@ -30,6 +30,7 @@ function App() {
         <Route path="/profile/:username">
           <Profile />
         </Route>
+
       </Switch>
     </Router>
   );

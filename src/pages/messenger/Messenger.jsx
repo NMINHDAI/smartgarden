@@ -81,11 +81,7 @@ export default function Messenger() {
       (member) => member !== user._id
     );
 
-    socket.current.emit("sendMessage", {
-      senderId: user._id,
-      receiverId,
-      text: newMessage,
-    });
+
 
     try {
       const res = await axios.post("https://cors-proxy420.herokuapp.com/https://danganhapi.herokuapp.com/api/messages", message);
@@ -94,6 +90,12 @@ export default function Messenger() {
     } catch (err) {
       console.log(err);
     }
+
+    socket.current.emit("sendMessage", {
+      senderId: user._id,
+      receiverId,
+      text: newMessage,
+    });
   };
 
   useEffect(() => {
